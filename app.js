@@ -19,12 +19,12 @@ io.on('connection', function(socket){
 });
 */
 
-io.on('connection', function(socket){
-    socket.on('chat message', function(msg){
+io.on('connection', function(socket) {
+    socket.on('chat message', function (msg) {
         io.emit('chat message', msg);
     });
+});
 
 http.listen(process.env.PORT || 3000, function(){
-    console.log(process.env.PORT);
     console.log('listening on process.env.PORT || *:3000');
 });
